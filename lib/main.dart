@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
 import './UI/CustomInputField.dart';
-
  void main() => runApp(MaterialApp(
    title: 'login APP',
    home: HomeScreen(),
    
  ));
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool val1 = false;
+  bool val2 = false;
+  void onchange(s){
+    setState(() {
+      val1 =s;
+    });
+
+  }
+  void onchange2(t){
+    setState(() {
+      val2 =t;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -49,12 +66,39 @@ class HomeScreen extends StatelessWidget {
                         Icon(Icons.person, color: Colors.white), 'Identifiant'),
                     CustomInputField(
                         Icon(Icons.lock, color: Colors.white), 'Mot de Passe'),
+
+
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
+                        child: Row(
+
+                               children: [
+                                 Checkbox(
+                                     activeColor: Colors.deepOrange,
+                                     value: val1, onChanged: onchange),
+                                 Text(
+                                     'se souvenir de moi',
+                                   style: TextStyle(
+                                       fontSize: 20.0,
+                                       fontWeight: FontWeight.bold,
+                                       color: Colors.white
+                                   ),
+                                 ),
+                               ],
+                     ),
+                      ),
+
+
+
                     Container(
                       width: 150,
-                      child: RaisedButton(onPressed: (){},color: Colors.deepOrange,textColor: Colors.white,
+                      child: RaisedButton(onPressed: (){print('ecriture en cours'
+                          ' !');},color: Colors.deepOrange,textColor: Colors.white,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
                         child: Text('Connexion',style: TextStyle(
-                            fontSize: 20.0
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
                         ),),),
                     )
                   ],
