@@ -67,7 +67,25 @@ class _HomeScreenState extends State<HomeScreen> {
                     CustomInputField(
                         Icon(Icons.lock, color: Colors.white), 'Mot de Passe'),
 
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
+                      child: Row(
 
+                        children: [
+                          Checkbox(
+                              activeColor: Colors.deepOrange,
+                              value: val1, onChanged: onchange),
+                          Text(
+                            'se souvenir de moi',
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
                         child: Row(
@@ -87,9 +105,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                ],
                      ),
                       ),
-
-
-
                     Container(
                       width: 150,
                       child: RaisedButton(onPressed: (){print('ecriture en cours'
@@ -98,7 +113,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text('Connexion',style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white
                         ),),),
                     )
                   ],
