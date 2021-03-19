@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import './UI/CustomInputField.dart';
-
  void main() => runApp(MaterialApp(
    title: 'login APP',
    home: HomeScreen(),
@@ -87,14 +86,33 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
+                        child: Row(
+
+                               children: [
+                                 Checkbox(
+                                     activeColor: Colors.deepOrange,
+                                     value: val1, onChanged: onchange),
+                                 Text(
+                                     'se souvenir de moi',
+                                   style: TextStyle(
+                                       fontSize: 20.0,
+                                       fontWeight: FontWeight.bold,
+                                       color: Colors.white
+                                   ),
+                                 ),
+                               ],
+                     ),
+                      ),
                     Container(
                       width: 150,
-                      child: RaisedButton(onPressed: (){},color: Colors.deepOrange,textColor: Colors.white,
+                      child: RaisedButton(onPressed: (){print('ecriture en cours'
+                          ' !');},color: Colors.deepOrange,textColor: Colors.white,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
                         child: Text('Connexion',style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
-
                         ),),),
                     )
                   ],
